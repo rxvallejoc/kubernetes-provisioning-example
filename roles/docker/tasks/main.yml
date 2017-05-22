@@ -1,0 +1,9 @@
+---
+- name: Install Docker
+  when: ansible_os_family == "RedHat"
+  yum:
+    name: docker
+    state: latest
+
+- name: Enable Docker
+  service: name=docker enabled=yes state=started
