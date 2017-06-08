@@ -11,6 +11,6 @@ dependencies:
 
 test:
   override:
-    - KITCHEN_LOCAL_YAML=.kitchen.docker.yml bundle exec kitchen test:
+    - KITCHEN_LOCAL_YAML=.kitchen.yml bundle exec kitchen test:
       timeout: 900
 
