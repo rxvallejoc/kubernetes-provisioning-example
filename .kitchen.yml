@@ -1,6 +1,8 @@
 ---
 driver:
-  name: vagrant
+  name: docker
+  privileged: true
+  use_sudo: false
 
 provisioner:
   name: ansible_playbook
@@ -11,6 +13,12 @@ provisioner:
 
 platforms:
   - name: centos-7.3
+    driver_config:
+      platform: centos
+      dockerfile: .kitchen-docker/centos7/Dockerfile
+      run_command: /sbin/init
+      volume:
+        - /sys/fs/cgroup:/sys/fs/cgroup:ro
 
 suites:
   - name: docker
