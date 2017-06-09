@@ -1,4 +1,4 @@
-FROM rxvallejoc/centos
+FROM rxvallejoc/centos:systemd
 
 RUN mkdir -p /var/run/sshd
 RUN useradd -d /home/<%= @username %> -m -s /bin/bash <%= @username %>
